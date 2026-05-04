@@ -1,0 +1,8 @@
+TÍTULO: Rastreo y Evasión en el Radar
+URL: http://192.168.70.43:5002
+VULNERABILIDAD: XSS Reflejado (Cross-Site Scripting)
+
+ENIGMA TÁCTICO:
+"El Módulo Operativo refleja las frecuencias de búsqueda directamente en el panel sin aplicar protocolos de sanitización (filtros). Sabemos por inteligencia previa que el sistema emite un 'token de autenticación' temporal y cifrado a cada operador, almacenándolo localmente en el transporte de la sesión. 
+
+Tu misión: Construye un vector de ataque (payload) en la caja de búsqueda que obligue al navegador del oficial a ejecutar un script, revelando las credenciales ocultas en su memoria."

@@ -1,8 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 6</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comando - Motor de Reportes de Inteligencia</title>
+    <style>
+        body { margin: 0; background-color: #020406; color: #00dd88; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .national-strip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(to right, #D52B1E 33%, #F9E11E 33%, #F9E11E 66%, #007934 66%); }
+        .terminal { background: #050a0f; border: 1px solid #005533; box-shadow: 0 0 25px rgba(0, 221, 136, 0.15); padding: 40px; width: 550px; }
+        h1 { font-size: 1.2em; color: #00ffaa; border-bottom: 1px solid #005533; padding-bottom: 15px; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .input-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 10px; font-weight: bold; font-size: 0.9em; color: #008855; }
+        input { width: 100%; background: #000; border: 1px solid #00dd88; color: #00ffaa; padding: 12px; box-sizing: border-box; font-family: inherit; }
+        input:focus { outline: none; box-shadow: 0 0 10px #005533; }
+        button { background: #002211; border: 1px solid #00dd88; color: #00dd88; padding: 12px 20px; width: 100%; cursor: pointer; font-weight: bold; font-family: inherit; transition: 0.3s; letter-spacing: 2px; }
+        button:hover { background: #00dd88; color: #000; }
+        .output-box { background: #000; border-left: 3px solid #00dd88; padding: 20px; margin-top: 20px; word-wrap: break-word; }
+        .btn-back { display: inline-block; margin-top: 20px; color: #008855; text-decoration: none; font-size: 0.8em; border: 1px solid #008855; padding: 5px 10px; }
+        .btn-back:hover { background: #008855; color: #000; }
+    </style>
+</head>
 <body>
-<h1>Reto 6 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="terminal">
+        <h1>Motor de Procesamiento de Inteligencia</h1>
+        
+        {% if resultado %}
+        <div class="output-box">
+            > COMPILACIÓN DE DATOS COMPLETADA:<br><br>
+            {{ resultado | safe }}
+        </div>
+        <a href="/" class="btn-back">NUEVA DIRECTIVA</a>
+        {% else %}
+        <form method="POST">
+            <div class="input-group">
+                <label>INGRESAR PARÁMETROS DEL REPORTE A COMPILAR:</label>
+                <input type="text" name="parametro" autocomplete="off" placeholder="Ej: Reporte_Operativo_Alpha" required>
+            </div>
+            <button type="submit">INICIAR COMPILACIÓN</button>
+        </form>
+        {% endif %}
+    </div>
 </body>
 </html>

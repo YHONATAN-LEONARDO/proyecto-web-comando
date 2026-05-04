@@ -1,8 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 2</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema C.O.T. - Búsqueda de Inteligencia</title>
+    <style>
+        body { 
+            margin: 0; 
+            background-color: #070a13; /* Azul noche táctico */
+            color: #33ff33; /* Verde fósforo de terminal */
+            font-family: 'Courier New', Courier, monospace; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+        /* Identificación de grado oficial con los colores nacionales */
+        .national-strip { 
+            position: absolute; 
+            top: 0; left: 0; right: 0; 
+            height: 6px; 
+            background: linear-gradient(to right, #D52B1E 33.33%, #F9E11E 33.33%, #F9E11E 66.66%, #007934 66.66%); 
+        }
+        .terminal-box { 
+            background-color: #0b111a; 
+            border: 1px solid #1a3c20; 
+            box-shadow: 0 0 20px rgba(51, 255, 51, 0.1); 
+            padding: 30px; 
+            width: 600px; 
+        }
+        .header { 
+            border-bottom: 1px dashed #33ff33; 
+            padding-bottom: 10px; 
+            margin-bottom: 20px; 
+        }
+        h1 { font-size: 1.2em; margin: 0; letter-spacing: 2px; }
+        p { font-size: 0.9em; color: #88aa88; }
+        .input-group { margin-top: 20px; display: flex; }
+        input[type="text"] { 
+            flex-grow: 1; 
+            background: #000; 
+            border: 1px solid #33ff33; 
+            color: #33ff33; 
+            padding: 10px; 
+            font-family: 'Courier New', Courier, monospace; 
+        }
+        input[type="text"]:focus { outline: none; box-shadow: 0 0 5px #33ff33; }
+        button { 
+            background: #1a3c20; 
+            border: 1px solid #33ff33; 
+            color: #33ff33; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            font-weight: bold; 
+        }
+        button:hover { background: #33ff33; color: #000; }
+        .radar-output { 
+            margin-top: 20px; 
+            padding: 15px; 
+            background: #05070a; 
+            border-left: 3px solid #D52B1E; 
+            min-height: 50px;
+        }
+        .warning { color: #F9E11E; font-size: 0.8em; margin-top: 20px; }
+    </style>
+</head>
 <body>
-<h1>Reto 2 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="terminal-box">
+        <div class="header">
+            <h1>>> SISTEMA DE INTERCEPTACIÓN DE COMUNICACIONES</h1>
+            <p>Módulo Operativo de Rastreo en el Ciberespacio</p>
+        </div>
+        
+        <p>[!] Ingrese la designación del objetivo o frecuencia para escanear en la red táctica.</p>
+        
+        <form method="GET">
+            <div class="input-group">
+                <input type="text" name="objetivo" placeholder="Ej: Unidad-Alfa, 192.168.x.x..." autocomplete="off">
+                <button type="submit">INICIAR ESCANEO</button>
+            </div>
+        </form>
+
+        {% if query %}
+        <div class="radar-output">
+            > Análisis de paquetes finalizado.<br>
+            > Resultados de interceptación para el parámetro: <strong>{{ query | safe }}</strong><br>
+            > Estado: Sin coincidencias exactas en la base de datos central.
+        </div>
+        {% endif %}
+        
+        <div class="warning">
+            ACCESO RESTRINGIDO. Todo el tráfico está siendo monitorizado. El token de autenticación de sesión ha sido asignado a su cliente.
+        </div>
+    </div>
 </body>
 </html>

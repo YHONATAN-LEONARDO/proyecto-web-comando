@@ -1,0 +1,11 @@
+TÍTULO: El Susurro de las Sombras
+URL: http://192.168.70.43:5010
+
+REPORTE OPERATIVO:
+El Verificador de Activos es el sistema más blindado de la red. No devuelve errores, no muestra nombres, solo confirma existencias. Es un oráculo binario. Inteligencia indica que los códigos de la bóveda (la FLAG) están en una tabla llamada 'boveda_seguridad' bajo la columna 'secreto'.
+
+TU ÚNICA PISTA:
+El sistema es vulnerable a inferencia lógica. Si una consulta es verdadera, el servidor dirá "ACTIVO LOCALIZADO". Si es falsa, dirá "NO ENCONTRADO". 
+
+Deberás interrogar al sistema usando funciones de substracción de texto para extraer la verdad carácter por carácter. La paciencia es tu mejor arma; el oráculo solo habla con Sí o No.
+

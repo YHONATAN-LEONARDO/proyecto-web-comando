@@ -1,7 +1,6 @@
-FROM python:3.9-alpine
+FROM python:3.9-slim
 WORKDIR /app
-RUN pip install flask
-COPY app.py .
-COPY templates templates/
-EXPOSE 5000
+COPY . /app
+RUN pip install flask pyjwt
+EXPOSE 5008
 CMD ["python", "app.py"]

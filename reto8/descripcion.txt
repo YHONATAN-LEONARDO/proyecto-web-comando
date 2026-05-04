@@ -1,0 +1,7 @@
+TÍTULO: El Sello de la Legión
+URL: http://192.168.70.43:5008
+
+INFORME TÁCTICO:
+El Sistema de Gestión de Rangos utiliza tokens firmados digitalmente para validar la jerarquía del personal en la red de Ciberdefensa. Se ha detectado que la infraestructura confía ciegamente en las afirmaciones (claims) contenidas en el token si la firma es válida.
+
+La Inteligencia sugiere que la clave de cifrado utilizada por los oficiales de comunicaciones es débil y podría ser vulnerable a ataques de fuerza bruta o diccionarios comunes. Tu misión es alterar tu identidad digital y presentarte ante el sistema con el rango de 'general'.

@@ -1,7 +1,6 @@
-FROM python:3.9-alpine
+FROM python:3.9-slim
 WORKDIR /app
+COPY . /app
 RUN pip install flask
-COPY app.py .
-COPY templates templates/
-EXPOSE 5000
+EXPOSE 5003
 CMD ["python", "app.py"]

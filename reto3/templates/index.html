@@ -1,8 +1,87 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 3</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enlace Satelital TKS-1 - Autenticación</title>
+    <style>
+        body { 
+            margin: 0; 
+            background-color: #04070a; 
+            color: #44aa44; 
+            font-family: 'Courier New', Courier, monospace; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+        .national-strip { 
+            position: absolute; 
+            top: 0; left: 0; right: 0; 
+            height: 6px; 
+            background: linear-gradient(to right, #D52B1E 33.33%, #F9E11E 33.33%, #F9E11E 66.66%, #007934 66.66%); 
+        }
+        .login-panel { 
+            background-color: #0a1118; 
+            border: 1px solid #224422; 
+            box-shadow: 0 0 15px rgba(68, 170, 68, 0.1); 
+            padding: 40px; 
+            width: 450px; 
+            text-align: center;
+        }
+        .logo { font-size: 3em; margin-bottom: 10px; color: #55cc55; }
+        h2 { margin: 0 0 5px 0; font-size: 1.2em; letter-spacing: 1px; color: #fff; }
+        p { font-size: 0.85em; color: #668866; margin-bottom: 30px; }
+        input { 
+            width: 90%; 
+            background: #000; 
+            border: 1px solid #44aa44; 
+            color: #44aa44; 
+            padding: 12px; 
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace; 
+            text-align: center;
+        }
+        button { 
+            width: 95%;
+            background: #113311; 
+            border: 1px solid #44aa44; 
+            color: #44aa44; 
+            padding: 12px; 
+            cursor: pointer; 
+            font-weight: bold; 
+        }
+        .footer-text { margin-top: 20px; font-size: 0.7em; color: #335533; }
+    </style>
+</head>
 <body>
-<h1>Reto 3 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    
+    <!-- 
+        =========================================================
+        LOG DE DESPLIEGUE - DIVISIÓN DE INGENIERÍA
+        =========================================================
+        TODO: Eliminar este bloque antes de pasar el nodo a producción.
+        Nota para el Tte. Ramírez: 
+        El sistema de enlace principal está fallando con la base de datos LDAP. 
+        He habilitado una llave de contingencia temporal (override key) 
+        para el enlace satelital.
+        
+        Llave de acceso de emergencia: COMANDO{1NF0_L34K_0P3R4C10N_S4T3L1T4L}
+        
+        POR FAVOR, BORRAR ESTO LUEGO DE LA PRUEBA. NO DEJAR RASTROS.
+        =========================================================
+    -->
+
+    <div class="login-panel">
+        <div class="logo">📡</div>
+        <h2>SISTEMA DE ENLACE TKS-1</h2>
+        <p>Autenticación Requerida - Nivel de Seguridad 4</p>
+        <form method="POST">
+            <input type="text" name="credencial" placeholder="Ingrese Código de Operador" autocomplete="off">
+            <input type="password" name="pin" placeholder="PIN de Seguridad">
+            <button type="submit">ESTABLECER CONEXIÓN</button>
+        </form>
+        <div class="footer-text">Conexión encriptada. El acceso no autorizado está penado por la ley militar.</div>
+    </div>
 </body>
 </html>

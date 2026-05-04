@@ -1,0 +1,7 @@
+TÍTULO: Frecuencia Fantasma
+URL: http://192.168.70.43:5009
+
+REPORTE DE INTELIGENCIA:
+El Panel de Control de Radiofrecuencia permite a los oficiales de comunicaciones realizar ajustes críticos en el espectro electromagnético. Se ha detectado que la interfaz de actualización carece de mecanismos de verificación de origen de solicitudes.
+
+La Inteligencia indica que si se logra forzar al administrador a enviar una petición POST con el valor exacto de frecuencia 'CIBER-BOL', el sistema entrará en modo de depuración y liberará los códigos de cifrado. Debes construir un vector de ataque que, al ser ejecutado por la víctima en su navegador, realice el cambio sin su intervención manual.

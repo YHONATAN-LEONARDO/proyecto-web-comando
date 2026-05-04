@@ -1,8 +1,50 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 4</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comando - Red de Mando Central</title>
+    <style>
+        body { margin: 0; background-color: #05080a; color: #00ff00; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .national-strip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(to right, #D52B1E 33%, #F9E11E 33%, #F9E11E 66%, #007934 66%); }
+        .terminal { background: #0a1014; border: 1px solid #005500; box-shadow: 0 0 20px rgba(0, 255, 0, 0.1); padding: 40px; width: 500px; }
+        h1 { font-size: 1.4em; color: #00ff00; border-bottom: 1px solid #005500; padding-bottom: 10px; margin-top: 0; letter-spacing: 2px; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; background: #000; border: 1px solid #00ff00; color: #00ff00; padding: 10px; box-sizing: border-box; font-family: inherit; }
+        button { background: #003300; border: 1px solid #00ff00; color: #00ff00; padding: 10px 20px; width: 100%; cursor: pointer; font-weight: bold; }
+        .error { color: #ff3333; margin-top: 15px; border-left: 3px solid #ff3333; padding-left: 10px; }
+        .success { color: #33ff33; margin-top: 20px; border: 1px solid #33ff33; padding: 20px; background: rgba(0,255,0,0.1); text-align: center; font-weight: bold; }
+    </style>
+</head>
 <body>
-<h1>Reto 4 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="terminal">
+        <h1>RED DE MANDO CENTRAL</h1>
+        
+        {% if flag %}
+        <div class="success">
+            ACCESO AUTORIZADO.<br><br>
+            [DATO CLASIFICADO REVELADO]<br>
+            {{ flag }}
+        </div>
+        {% else %}
+        <p>Identificación requerida para acceder a las directivas de la Base de Datos Central.</p>
+        <form method="POST">
+            <div class="input-group">
+                <label>OPERADOR_ID:</label>
+                <input type="text" name="usuario" autocomplete="off" required>
+            </div>
+            <div class="input-group">
+                <label>CLAVE_AUTENTICACIÓN:</label>
+                <input type="password" name="password" required>
+            </div>
+            <button type="submit">AUTENTICAR</button>
+        </form>
+        {% endif %}
+
+        {% if error %}
+        <div class="error">>> {{ error }}</div>
+        {% endif %}
+    </div>
 </body>
 </html>

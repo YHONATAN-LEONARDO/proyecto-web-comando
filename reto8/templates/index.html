@@ -1,8 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 8</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SISTEMA DE GESTIÓN DE RANGOS - CIBERDEFENSA</title>
+    <style>
+        body { margin: 0; background-color: #0a0e14; color: #d1d1d1; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .national-strip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(to right, #D52B1E 33%, #F9E11E 33%, #F9E11E 66%, #007934 66%); }
+        .panel { background: #131921; border: 1px solid #2a343f; padding: 40px; width: 500px; position: relative; }
+        .header { border-bottom: 1px solid #2a343f; padding-bottom: 20px; margin-bottom: 20px; }
+        h1 { font-size: 1.1em; color: #F9E11E; margin: 0; letter-spacing: 1px; }
+        .identity-card { background: #070a0e; border-left: 4px solid #D52B1E; padding: 20px; }
+        .label { color: #5c6b7a; font-size: 0.8em; text-transform: uppercase; }
+        .value { color: #fff; font-size: 1.2em; font-weight: bold; margin-bottom: 15px; }
+        .alert { background: rgba(213, 43, 30, 0.1); border: 1px solid #D52B1E; color: #D52B1E; padding: 15px; font-size: 0.8em; margin-top: 20px; text-align: center; }
+        .success-box { background: rgba(0, 121, 52, 0.2); border: 1px solid #007934; color: #00ff00; padding: 15px; margin-top: 20px; font-weight: bold; word-break: break-all; }
+    </style>
+</head>
 <body>
-<h1>Reto 8 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="panel">
+        <div class="header">
+            <h1>>> IDENTIFICACIÓN DE PERSONAL MILITAR</h1>
+        </div>
+        
+        <div class="identity-card">
+            <div class="label">Estado de la Sesión:</div>
+            <div class="value">ACTIVA</div>
+            
+            <div class="label">Rango Detectado:</div>
+            <div class="value" style="color: #007934;">{{ role | upper }}</div>
+            
+            {% if flag %}
+                <div class="success-box">
+                    >> ACCESO A DIRECTIVAS DE ALTO MANDO CONCEDIDO:<br><br>
+                    {{ flag }}
+                </div>
+            {% else %}
+                <div class="alert">
+                    [!] RANGO INSUFICIENTE PARA ACCEDER A LA FLAG DEL COMANDO.
+                </div>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>

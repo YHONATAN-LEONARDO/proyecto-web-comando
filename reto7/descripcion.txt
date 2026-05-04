@@ -1,0 +1,7 @@
+TÍTULO: Interrupción del Flujo
+URL: http://192.168.70.43:5007
+
+REPORTE OPERATIVO:
+El Módulo de Diagnóstico permite verificar la disponibilidad de activos en la red táctica mediante el protocolo ICMP. La terminal interactúa directamente con los binarios del sistema operativo para agilizar las pruebas de campo.
+
+Se tiene conocimiento de que la flag ha sido resguardada en un registro de acceso fuera de la ruta de la aplicación (/var/log/mando_central/access.log). Tu objetivo es romper la ejecución lineal del comando y forzar al sistema a leer archivos restringidos.

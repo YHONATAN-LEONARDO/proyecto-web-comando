@@ -1,0 +1,7 @@
+TÍTULO: El Espejo de la Identidad
+URL: http://192.168.70.43:5001
+DIFICULTAD: Fácil (Verde)
+VULNERABILIDAD: IDOR (Insecure Direct Object Reference)
+
+ENIGMA:
+"Los números que portas en la red son solo una máscara. Eres el origen, el principio solitario. Pero, ¿qué sucedería si decides caminar un paso más allá de tu propia existencia? El ente que te sigue conoce el secreto que a ti te fue negado."

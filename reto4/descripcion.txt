@@ -1,0 +1,6 @@
+TÍTULO: Brecha en el Mando Central
+URL: http://192.168.70.43:5004
+VULNERABILIDAD: SQL Injection (Inyección SQL)
+
+ENIGMA TÁCTICO:
+"El acceso a la Red de Mando Central está custodiado, pero la Inteligencia detectó que las terminales procesan las credenciales sin aplicar el blindaje adecuado contra directivas de la base de datos subyacente. El sistema evalúa si lo que dices es 'verdadero'. Tu objetivo no es adivinar la contraseña del General, sino convencer al motor de la base de datos de que tu afirmación es siempre cierta. Manipula la sintaxis y anula el resto de la validación."

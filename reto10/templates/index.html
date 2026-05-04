@@ -1,8 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 10</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comando - Verificador de Activos de Alto Nivel</title>
+    <style>
+        body { margin: 0; background-color: #ffffff; color: #1a1a1a; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .national-strip { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: linear-gradient(to right, #D52B1E 33.33%, #F9E11E 33.33%, #F9E11E 66.66%, #007934 66.66%); }
+        .container { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 50px; width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 4px; text-align: center; }
+        h1 { font-size: 1.1em; color: #333; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; border-bottom: 2px solid #D52B1E; padding-bottom: 10px; display: inline-block; }
+        input { width: 100%; padding: 15px; margin: 20px 0; border: 1px solid #ccc; border-radius: 2px; font-family: 'Courier New', monospace; font-size: 1.1em; text-align: center; box-sizing: border-box; }
+        button { background: #1a1a1a; color: #fff; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
+        button:hover { background: #D52B1E; }
+        .output { margin-top: 30px; padding: 15px; background: #fff; border: 1px solid #eee; font-family: 'Courier New', monospace; font-weight: bold; min-height: 20px; color: #007934; }
+        .footer { position: absolute; bottom: 20px; font-size: 0.7em; color: #aaa; text-transform: uppercase; }
+    </style>
+</head>
 <body>
-<h1>Reto 10 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="container">
+        <h1>Búsqueda de Activos</h1>
+        <p style="font-size: 0.85em; color: #666;">Ingrese el identificador numérico para validar el estado en la red nacional.</p>
+        <form method="POST">
+            <input type="text" name="id" placeholder="ID_ACTIVO" autocomplete="off">
+            <button type="submit">VALIDAR INTEGRIDAD</button>
+        </form>
+        {% if mensaje %}
+        <div class="output">>> {{ mensaje }}</div>
+        {% endif %}
+    </div>
+    <div class="footer">Unidad de Ciberdefensa - Bolivia</div>
 </body>
 </html>

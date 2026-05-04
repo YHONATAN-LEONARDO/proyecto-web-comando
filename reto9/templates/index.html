@@ -1,8 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 9</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SISTEMA DE COMUNICACIONES - COMANDO CENTRAL</title>
+    <style>
+        body { margin: 0; background-color: #0d0d0d; color: #f2f2f2; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .national-strip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(to right, #D52B1E 33%, #F9E11E 33%, #F9E11E 66%, #007934 66%); }
+        .console { background: #1a1a1a; border: 2px solid #333; padding: 30px; width: 550px; box-shadow: inset 0 0 10px #000; }
+        h1 { font-size: 1.2em; color: #F9E11E; text-align: center; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .label { color: #888; font-size: 0.8em; }
+        .value { color: #00ff00; font-weight: bold; }
+        .form-container { margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; }
+        input { background: #000; border: 1px solid #007934; color: #00ff00; padding: 10px; width: 60%; font-family: inherit; }
+        button { background: #007934; border: none; color: #fff; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+        .flag-zone { margin-top: 20px; padding: 15px; border: 2px dashed #D52B1E; color: #D52B1E; text-align: center; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0.5; } }
+    </style>
+</head>
 <body>
-<h1>Reto 9 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="console">
+        <h1>>> PANEL DE CONTROL DE RADIOFRECUENCIA</h1>
+        
+        <div class="data-grid">
+            <div class="label">ESTADO DEL NODO:</div>
+            <div class="value">{{ estado }}</div>
+            <div class="label">FRECUENCIA ACTUAL:</div>
+            <div class="value">{{ frecuencia }}</div>
+        </div>
+
+        <div class="form-container">
+            <p style="font-size: 0.8em;">CAMBIO DE FRECUENCIA OPERACIONAL:</p>
+            <form action="/" method="POST">
+                <input type="text" name="frecuencia" placeholder="Nueva Frecuencia (MHz)">
+                <button type="submit">ACTUALIZAR</button>
+            </form>
+        </div>
+
+        {% if flag %}
+        <div class="flag-zone">
+            [!] ALERTA: INTERCEPCIÓN DETECTADA<br>
+            {{ flag }}
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>

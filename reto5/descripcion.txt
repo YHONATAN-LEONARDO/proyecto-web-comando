@@ -1,0 +1,10 @@
+TÍTULO: Navegación a Ciegas
+URL: http://192.168.70.43:5005
+VULNERABILIDAD: Path Traversal (Salto de Directorio)
+
+ENIGMA TÁCTICO:
+"El Gestor de Documentos del Comando permite a los operadores leer reportes preestablecidos desde un directorio seguro en el servidor (/app/documentos/). 
+
+Sin embargo, Inteligencia ha reportado que el sistema utiliza el parámetro de la URL directamente para buscar los archivos, sin verificar si el operador intenta 'retroceder' en la estructura de carpetas.
+
+Existe un archivo altamente confidencial llamado 'secreto_militar.txt' ubicado un nivel arriba de la carpeta de documentos públicos. Encuentra la forma de manipular la ruta de lectura para extraer esta información."

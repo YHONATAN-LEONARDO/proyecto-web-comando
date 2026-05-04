@@ -1,8 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 1</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto 1 - El Espejo de la Identidad</title>
+    <style>
+        body { margin: 0; height: 100vh; background: linear-gradient(to bottom, #D52B1E 0%, #D52B1E 33.33%, #F9E11E 33.33%, #F9E11E 66.66%, #007934 66.66%, #007934 100%); display: flex; justify-content: center; align-items: center; font-family: sans-serif; overflow: hidden; }
+        .flag-bg { position: absolute; top: 10%; z-index: 1; font-size: 2.5em; color: white; text-shadow: 3px 3px 15px rgba(0,0,0,0.9); font-weight: bold; animation: fadeIn 1s ease-in-out; }
+        .card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); text-align: center; width: 380px; z-index: 10; position: relative; }
+        h2 { margin-top: 0; color: #333; }
+        h3 { color: #555; font-size: 1.1em; }
+        .dif { color: #007934; font-weight: 900; font-size: 1.2em; }
+        .cryptic-text { font-style: italic; color: #666; background: #f4f4f4; padding: 15px; border-left: 4px solid #333; margin: 20px 0; font-size: 0.95em; text-align: left; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; font-size: 1em; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
 <body>
-<h1>Reto 1 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    {% if flag %}
+    <div class="flag-bg">{{ flag }}</div>
+    {% endif %}
+    <div class="card">
+        <h2>El Espejo de la Identidad</h2>
+        <h3>IDOR (Insecure Direct Object Reference)</h3>
+        <p>Dificultad: <span class="dif">FÁCIL</span></p>
+        <hr>
+        <div class="cryptic-text">"Los números que portas en la red son solo una máscara. Eres el origen, el principio solitario. Pero, ¿qué sucedería si decides caminar un paso más allá de tu propia existencia? El ente que te sigue conoce el secreto que a ti te fue negado."</div>
+        <form method="GET">
+            <label for="id_input" style="display:block; text-align:left; font-weight:bold; font-size:0.9em; color:#444;">Tu identificador actual:</label>
+            <input type="text" id="id_input" name="id" value="{{ uid }}" readonly style="background:#eee; cursor:not-allowed;">
+            <p style="font-size:0.8em; color:#888;">(El sistema te ha asignado este número en la barra de direcciones)</p>
+        </form>
+    </div>
 </body>
 </html>

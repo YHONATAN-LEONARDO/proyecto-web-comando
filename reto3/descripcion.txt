@@ -1,0 +1,8 @@
+TÍTULO: Rastros en la Arena
+URL: http://192.168.70.43:5003
+VULNERABILIDAD: Information Leakage (Fuga de Información)
+
+ENIGMA TÁCTICO:
+"El Departamento de Ingeniería del Comando desplegó el nuevo portal de enlace satelital bajo extrema presión táctica. La Inteligencia sugiere que hubo fallos en los protocolos de Seguridad de las Operaciones (OPSEC) durante la puesta en producción.
+
+Las interfaces a veces esconden más información de la que muestran a simple vista. Los desarrolladores suelen dejar notas invisibles para el ojo común, pero evidentes para quien sabe inspeccionar la estructura de la matriz. Encuentra la llave de emergencia."

@@ -1,8 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head><title>Reto 7</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SISTEMA TÁCTICO - DIAGNÓSTICO DE RED</title>
+    <style>
+        body { margin: 0; background-color: #050505; color: #ff3333; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .national-strip { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(to right, #D52B1E 33%, #F9E11E 33%, #F9E11E 66%, #007934 66%); }
+        .terminal { background: #0a0000; border: 1px solid #550000; box-shadow: 0 0 30px rgba(255, 0, 0, 0.1); padding: 40px; width: 650px; }
+        h1 { font-size: 1.1em; color: #ff3333; border-bottom: 2px solid #550000; padding-bottom: 10px; margin-top: 0; letter-spacing: 3px; }
+        .status-bar { font-size: 0.7em; background: #220000; padding: 5px; margin-bottom: 20px; display: flex; justify-content: space-between; }
+        .input-area { margin-top: 20px; }
+        input { width: 100%; background: #000; border: 1px solid #550000; color: #ff3333; padding: 10px; box-sizing: border-box; font-family: inherit; margin-bottom: 15px; }
+        input:focus { outline: none; border-color: #ff3333; }
+        button { background: #330000; border: 1px solid #ff3333; color: #ff3333; padding: 10px; width: 100%; cursor: pointer; font-weight: bold; letter-spacing: 2px; }
+        button:hover { background: #ff3333; color: #000; }
+        pre { background: #000; border: 1px solid #220000; padding: 15px; font-size: 0.85em; overflow-x: auto; color: #ff6666; min-height: 40px; }
+    </style>
+</head>
 <body>
-<h1>Reto 7 - Estructura vacía</h1>
-<p>Aquí pondrás tu reto (fácil, medio o difícil).</p>
+    <div class="national-strip"></div>
+    <div class="terminal">
+        <div class="status-bar">
+            <span>MODO: DIAGNÓSTICO_AVANZADO</span>
+            <span>NIVEL: ACCESO_RESTRINGIDO</span>
+        </div>
+        <h1>>> CONSOLA DE PRUEBA DE CONECTIVIDAD</h1>
+        
+        <form method="POST">
+            <div class="input-area">
+                <label style="font-size: 0.8em; display: block; margin-bottom: 10px;">DIRECCIÓN_HOST_DESTINO:</label>
+                <input type="text" name="direccion" autocomplete="off" placeholder="127.0.0.1" required>
+            </div>
+            <button type="submit">EJECUTAR PING</button>
+        </form>
+
+        {% if resultado %}
+        <p style="font-size: 0.8em; margin-top: 20px;">>> RESULTADO DE LA SECUENCIA:</p>
+        <pre>{{ resultado }}</pre>
+        {% endif %}
+    </div>
 </body>
 </html>
